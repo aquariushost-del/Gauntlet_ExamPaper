@@ -1,7 +1,7 @@
 # Exam Paper Gauntlet — Master Instructions
 
 **Version:** 1.4 — specimen-measured spacing gold standard, page/branding rules, generator hygiene and documented beyond-limit rounds
-**Updated:** 8 October 2026 (proposed; finalise on teacher approval)  
+**Updated:** 9 October 2026 (teacher-approved)  
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** Specimen paper (`.docx`), syllabus (`.md`); original specimen PDF optional for visual cross-checking.
 
