@@ -1,12 +1,13 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.4 — specimen-measured spacing gold standard, page/branding rules, generator hygiene and documented beyond-limit rounds
+**Version:** 1.4.1 — specimen-measured spacing gold standard, page/branding rules, generator hygiene, documented beyond-limit rounds and realistic line art for people, animals and objects
 **Updated:** 9 October 2026 (teacher-approved)  
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** Specimen paper (`.docx`), syllabus (`.md`); original specimen PDF optional for visual cross-checking.
 
 ### Changelog
 
+- **v1.4.1:** People, animals and everyday objects in figures must be recognisable, specimen-accurate line art, never placeholder shapes. Image generation is allowed but must be cleaned up to black-and-white exam line art, and physics-relevant geometry stays vector-drawn (§6.1). Realistic line art is now an explicit scored criterion in the Diagram quality category (25%): placeholder shapes are a scored defect, and the Critic checks it per figure (§5, §6.1, §10). Teacher request after the 5086/02 Q3 slide figure.
 - **v1.4:** Added the strict specimen spacing gold standard (never below the specimen; at most 0.5 pt above) with a measured style sheet and a 5086 worked example (§9.1.1–9.1.2), working space from specimen medians per mark (§9.1.3), dotted-line start/end rules, justified text, every question on a new page (universal) and even page count (§9.2), school branding as a project setting with cover effort deprioritised (§2.1, §9.4), cover/header/footer checks from Draft_01 (§9.3, §10), editable stacked notation (§9.5), generator hygiene with schema order, XSD validation and pixel diffs (§9.6), the Word-pagination disclosure (§12) and teacher-authorised rounds beyond the limit (§4, §10, §12, §13). Lessons from the 5086/02 SACSS Preliminary 2026 project.
 - **v1.3:** 99/96 acceptance thresholds, mandatory specimen-formatting verification and Google Drive output.
 
@@ -96,7 +97,7 @@ There are **exactly two AI roles**, Builder AI and Independent Critic AI, operat
 
 | Category | Weight | Core evidence |
 |---|---:|---|
-| Diagram quality | **25%** | Individual rendered diagram inspection; science, linework, labels, scale, print clarity |
+| Diagram quality | **25%** | Individual rendered diagram inspection; science, linework, labels, scale, print clarity; **realistic, specimen-accurate line art for people, animals and objects** (§6.1) |
 | Creativity and originality | **20%** | Distinct contexts and reasoning; no superficial specimen rewrites |
 | Question phrasing and exam style | **15%** | Command words, precision, concision, scaffolding, figure references |
 | Scientific accuracy and question validity | **15%** | Independently worked answers, correct data/units, unambiguous solvability and defensible mark allocation |
@@ -128,6 +129,13 @@ Create diagrams **comparable to or better than the specimen in clarity and techn
 - Keep label positions, line intersections, page size and printed readability under control; no overlapping text, cropped figures or blurry edges.
 - Figures must serve the assessment, be properly referenced/numbered, and must not inadvertently reveal the answer.
 - Critic must check **every** figure at actual rendered/printed size and record issues per figure. A scientifically wrong essential figure is **critical**.
+
+### 6.1 People, animals and everyday objects (scored criterion)
+
+- People, animals and everyday objects in a figure (a child on a slide, a fish on a hook, a cooler box, a hand holding apparatus) must be drawn as **recognisable, accurate line art in the style of the specimen's figures**. Correct proportions and pose for the situation, thin uniform black outlines, white fill, no shading or colour. **Never use simple placeholder shapes**, for example a circle on a rectangle standing in for a person.
+- **Image generation may be used** to make such drawings. The result must be cleaned up to black-and-white exam line art (thresholded, stray marks removed, transparent or white background, no text; vectorised where practical so it stays crisp at 600 dpi). It must be checked at print size for recognisability.
+- **Physics-relevant geometry stays vector-drawn**: slopes, heights, distances, angles, rays, force arrows, circuits, scales and dimension lines. A drawn or generated figure must sit on that geometry at the stated position. It must not change the geometry or overlap any label, arrow or dimension line.
+- **Critic scoring guidance:** realistic line art is an explicit subcheck of the **Diagram quality** category (25%). For every figure that shows a person, animal or object, the Critic records PASS or FAIL for "recognisable, specimen-accurate line art (no placeholder shapes)" in the diagram-by-diagram review. Each placeholder or unrecognisable drawing is a **scored defect in the Diagram quality category**. It is at least **minor**, and **major** when the depicted person, animal or object is the subject of the question. It must be corrected before acceptance like any other defect.
 
 ## 7. Creativity (20%) and question phrasing (15%)
 
@@ -267,7 +275,7 @@ Do **not** overwrite earlier drafts, alter quality thresholds midstream or chang
 - Draft identifier; explicit list of reviewed files and checks actually performed.
 - Six category scores, subcheck rationale, weighted total and calculation.
 - Findings table: severity, question/figure/page, evidence, corrective instruction, verification status.
-- Diagram-by-diagram review; independent question solvability, scientific accuracy and mark-allocation checks; syllabus mapping audit; page-by-page formatting review and the evidence-backed Section 9 checklist with direct specimen comparison references.
+- Diagram-by-diagram review, including the §6.1 line-art check (PASS/FAIL for each figure showing a person, animal or object); independent question solvability, scientific accuracy and mark-allocation checks; syllabus mapping audit; page-by-page formatting review and the evidence-backed Section 9 checklist with direct specimen comparison references.
 - Regressions vs prior version; count of unresolved critical defects; `TARGET MET` or `REVISE`/`NOT VERIFIED` with reasons.
 
 ## 11. Project file structure

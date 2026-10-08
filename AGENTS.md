@@ -52,6 +52,7 @@ Execution Rules
 * Execute review iterations autonomously within the limits stated in the master instructions. Go beyond the round limit only when the teacher explicitly asks, and record it.
 * Do not fabricate quality scores or claim checks were completed without evidence.
 * Prioritise exceptional diagram quality, creative questions, accurate scientific content and faithful specimen formatting.
+* Draw people, animals and objects in figures as recognisable, specimen-accurate black-and-white line art, never placeholder shapes. Image generation is allowed if cleaned up to exam line art; physics geometry stays vector-drawn. This is a scored Diagram quality criterion, and placeholders are a scored defect (GAUNTLET §6.1).
 * Do not declare the examination paper ready until the quality criteria are met or clearly report any outstanding limitations.
 * Disclose when Word pagination is untested (non-Word renderer), and list the tightest page feet.
 
