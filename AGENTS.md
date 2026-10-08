@@ -53,6 +53,8 @@ Execution Rules
 * Do not fabricate quality scores or claim checks were completed without evidence.
 * Prioritise exceptional diagram quality, creative questions, accurate scientific content and faithful specimen formatting.
 * Draw people, animals and objects in figures as recognisable, specimen-accurate black-and-white line art, never placeholder shapes. Image generation is allowed if cleaned up to exam line art; physics geometry stays vector-drawn. This is a scored Diagram quality criterion, and placeholders are a scored defect (GAUNTLET §6.1).
+* Calculation answer lines copy the specimen's measured geometry: the `=` ends at one fixed x (label right-aligned), the dots fill from the `=` to the unit, then a space and the mark bracket right-flush at one fixed x. Build with a right tab plus a right-aligned dot-leader tab, never a fixed left label start (GAUNTLET §9.2).
+* Context or data first, then the command sentence on its own new line at the same indent, with the specimen's spacing (5086: 26.1 pt pitch, one blank line). Wording unchanged; consecutive commands stay together (GAUNTLET §9.2).
 * Do not declare the examination paper ready until the quality criteria are met or clearly report any outstanding limitations.
 * Disclose when Word pagination is untested (non-Word renderer), and list the tightest page feet.
 
