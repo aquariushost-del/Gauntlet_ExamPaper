@@ -1,9 +1,14 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.3 — 99/96 acceptance thresholds, mandatory specimen-formatting verification and Google Drive output
-**Updated:** 8 October 2026  
+**Version:** 1.4 — specimen-measured spacing gold standard, page/branding rules, generator hygiene and documented beyond-limit rounds
+**Updated:** 8 October 2026 (proposed; finalise on teacher approval)  
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** Specimen paper (`.docx`), syllabus (`.md`); original specimen PDF optional for visual cross-checking.
+
+### Changelog
+
+- **v1.4:** Added the strict specimen spacing gold standard (never below the specimen; at most 0.5 pt above) with a measured style sheet and a 5086 worked example (§9.1.1–9.1.2), working space from specimen medians per mark (§9.1.3), dotted-line start/end rules, justified text, every question on a new page (universal) and even page count (§9.2), school branding as a project setting with cover effort deprioritised (§2.1, §9.4), cover/header/footer checks from Draft_01 (§9.3, §10), editable stacked notation (§9.5), generator hygiene with schema order, XSD validation and pixel diffs (§9.6), the Word-pagination disclosure (§12) and teacher-authorised rounds beyond the limit (§4, §10, §12, §13). Lessons from the 5086/02 SACSS Preliminary 2026 project.
+- **v1.3:** 99/96 acceptance thresholds, mandatory specimen-formatting verification and Google Drive output.
 
 ## 1. Mission
 
@@ -21,6 +26,19 @@ Deliver three editable Microsoft Word documents: the approved Table of Specifica
 4. **Original specimen PDF**, if provided, is the visual reference for identifying artifacts caused by PDF-to-Word conversion.
 
 When sources conflict, honour explicit user constraints on the intended paper and the syllabus on examinable content; document any unresolved conflict. Do not assume the specimen's exact question content or contexts should be reused.
+
+### 2.1 Project settings
+
+Record these settings in `Blueprint_Notes.md` at the start of Loop 1, and apply them throughout:
+
+| Setting | Meaning | Example (5086/02, 2026) |
+|---|---|---|
+| `SCHOOL_NAME` | Short school name, printed on the cover and in every footer | `SACSS` |
+| `EXAM_TITLE` | Examination title, printed on the cover and in every footer | `Preliminary Examination 2026` |
+| `PAPER_CODE` | Syllabus/paper code shown in the footer and on the cover | `5086/02` |
+| `TEACHER_DEVIATIONS` | Deliberate, teacher-requested departures from the specimen, recorded as they are made | SACSS cover lines in place of the MOE/Cambridge lines |
+
+A teacher-requested deviation is not a defect. Builder records it in the Builder notes, and Critic verifies that it was applied as requested rather than scoring it against the specimen. List all deviations in the final quality report.
 
 ## 3. Exactly two AI roles
 
@@ -68,7 +86,7 @@ There are **exactly two AI roles**, Builder AI and Independent Critic AI, operat
 1. Builder works from `TOS_Approved.docx`, creating a fully editable paper and professionally drawn, scientifically correct diagrams based on the approved TOS. It must independently check the intended answers while drafting, but **must not produce the formal answer scheme until Loop 2 has met its quality target**.
 2. Critic independently reviews the examination paper against the **weighted quality bar in Section 5**, approved blueprint, syllabus and specimen. It independently works every question to detect invalid or ambiguous questions, checks all figures and mark totals, and visually inspects each rendered page. No formal answer scheme is required at this stage.
 3. Save each paper iteration as `Draft_01.docx`, `Draft_02.docx` and so on with its corresponding reviewed TOS-alignment record and Critic report. Revise and reassess the full deliverable package in each round, checking for regressions.
-4. Loop 2 achieves its target only at **≥99/100 overall, ≥96/100 in every scored category, zero unresolved critical defects, and all mandatory checks verified**. Maximum **five full-paper review rounds**. If not achieved, deliver the best verified draft and honest outstanding-issues report.
+4. Loop 2 achieves its target only at **≥99/100 overall, ≥96/100 in every scored category, zero unresolved critical defects, and all mandatory checks verified**. Maximum **five full-paper review rounds**. If not achieved, deliver the best verified draft and honest outstanding-issues report. **Exception:** if the teacher explicitly asks to continue past the limit (for example, "loop until everything's perfect"), further rounds are allowed. Each extra round keeps the same thresholds, never overwrites drafts, and is recorded in the Builder notes, the Critic report and the final quality report as beyond the limit at the teacher's instruction. Builder and Critic must never extend the limit on their own initiative.
 5. If drafting exposes a need to change the **approved topics, question marks, assessment-objective distribution, section structure or choice rules**, update the TOS and **return to the Loop 1 Critic for renewed approval before making that substantive paper change**. Minor wording, diagram placement and formatting changes that preserve the locked blueprint do not require TOS reapproval.
 6. Keep the TOS aligned with the paper and reapprove any substantive blueprint changes. **After Loop 2 concludes successfully**, Builder alone creates `Final_Answer_Scheme.docx`, with full model answers, calculations, units, marks per part, acceptable alternatives and partial-credit guidance as appropriate. No third Gauntlet loop, quality score, or independent Critic review of the answer scheme is required. If Loop 2 does not pass, the answer scheme may be produced only if the user explicitly requests it, and it must be labelled draft.
 
@@ -137,6 +155,44 @@ Read the specimen DOCX properties and render its pages. Use the original specime
 
 Record a specimen style sheet with evidence: page size and margins; font family and size; line and paragraph spacing; question-number, stem, subpart and nested-part positions; answer-line start/end positions; calculation-answer alignment; unit and mark-bracket positions; figure/caption conventions; headers, footers and page numbers. Record measured values where available and identify any uncertain conventions. Repair conversion artifacts rather than copying them.
 
+#### 9.1.1 Spacing gold standard: measure the specimen first
+
+The specimen is the **gold standard for vertical and horizontal spacing**. Before Draft_01, Builder renders the specimen and measures it from the rendered page, using text and line bounding boxes and not the DOCX values alone, because renderers resolve spacing differently. Builder records the results in the specimen style sheet, giving the median for each gap and the pages sampled:
+
+- question text (last line) to the first dotted answer line;
+- dotted-line pitch (line to line);
+- answer area (last dotted line or answer group) to the next part;
+- answer area to the next subpart, or to `[Total: n]`;
+- section heading, section instruction and first question stem positions on a section's first page;
+- dotted-line start and end x-positions for each indent level;
+- header and page-number position and body start;
+- calculation working space for each mark value (§9.1.3).
+
+**Spacing rule (strict, one-sided):** no gap or space in any draft may be **below the specimen value, by any amount**. Each measured gap must be **at least the specimen value and no more than 0.5 pt above it** (specimen ≤ draft ≤ specimen + 0.5 pt). The 0.5 pt tolerance applies on the loose side only. A gap 0.1 pt smaller than the specimen is a FAIL. If content does not fit, move it to the next page; never compress it. Builder checks every part, not a sample, with a scripted measurement table (one row per gap: specimen value, draft value, PASS/FAIL), and submits the table with each draft. Critic re-measures independently.
+
+#### 9.1.2 Worked example: 5086 Science (Physics) Paper 2 specimen
+
+Measured from a LibreOffice render of the 5086 specimen DOCX (Arial rendered as the metric-compatible Liberation Sans). Use these values only for that specimen. Measure any other specimen afresh.
+
+| Property | Specimen value |
+|---|---|
+| Page and margins | A4; 1.50 cm left and right margins |
+| Font | Arial 11 pt |
+| Indents (question number, stem / part / subpart / nested) | 0.25 / 1.05 / 1.85 / 2.65 cm |
+| Dotted-line pitch | 26 pt |
+| Question text to first dotted line | 26 pt |
+| Answer to next part | 39 pt |
+| Answer to next subpart or `[Total]` | 26 pt |
+| Section heading / instruction / first stem (text top from page top) | 62.5 / 88.5 / 114.5 pt |
+| Calculation working space for [1] / [2] / [3] (medians) | 52 / 78 / 105 pt |
+| Dotted-line start x (part / subpart) | 95.5 / 120.0 pt |
+| Dotted-line end x (labelled answer group / full-width written line) | 529.9 / 545.2 pt |
+| Header page number (bold, start x, text top) | x 291.6 pt, 37.2 pt; body starts at 62.5 pt |
+
+#### 9.1.3 Calculation working space
+
+Working space is the blank space between the end of the question text and the calculation answer group. It is **at least the specimen median for the part's mark value** (measured as in §9.1.1) and no more than 0.5 pt above it, except for the multi-step allowance below. In the 5086 example these are [1] 52 pt, [2] 78 pt and [3] 105 pt. Add extra space only for a genuine multi-step chain, for example three dependent calculation steps; record the reason for each such part, and keep the addition small (5086/02 used 118 pt for its three-step [3] parts). Do not add space generally, and never set it below the median, by any amount, to save a page.
+
 Use the uploaded DOCX as the starting template when technically practical. Otherwise recreate its verified conventions using Word paragraph styles, hanging indents, tab stops or borderless tables. Do not rely on repeated spaces for alignment. Preserve editable Word text and tables; retain editable diagrams where feasible without reducing quality. Different content may require different pagination, but must retain the specimen's layout conventions.
 
 ### 9.2 Mandatory Builder and Critic checklist
@@ -148,14 +204,14 @@ Use the uploaded DOCX as the starting template when technically practical. Other
 | Calculation answer placement | Where the specimen uses a right-side answer group, place the quantity label, equals sign, visible dotted line, prescribed unit and mark bracket together toward the right. Do not place the label at the left margin or leave the mark isolated far from the unit. |
 | Visible numerical answer lines | Every numerical response requiring a final answer has a clearly visible dotted line of sufficient length. Check the rendered page, not merely the presence of dots or a tab in the source. No missing, collapsed or excessively short line. |
 | Calculation working space | Provide blank working space appropriate to the required steps and comparable to the specimen's convention. Independently solve the part to judge the space needed. Do not compress multistep calculations to fit a preferred page count. |
-| Written-response space | Provide enough dotted answer lines for the expected response and mark demand. Use consistent line lengths and spacing aligned with the response text. |
-| Gap before the first answer line | Leave a clear, specimen-consistent gap between the final line of question text and the first dotted answer line. No cramped transition. |
-| Separation between parts | Leave a clear, specimen-consistent gap after a completed answer area before the next subpart. Check the entire lower-page layout for compression. |
+| Written-response space | Provide enough dotted answer lines for the expected response and mark demand. Each dotted line **starts exactly at the text indent of the question, part or subpart it belongs to**, and **ends at the specimen's end position** for that layout (§9.1.1). The mark bracket follows the last line, in the specimen's position. Use the specimen's line pitch throughout. |
+| Gap before the first answer line | The gap from the last line of question text to the first dotted line is never below the specimen value and at most 0.5 pt above it (§9.1.1). |
+| Separation between parts | The gaps from answer to next part and from answer to next subpart or `[Total]` are never below the specimen value and at most 0.5 pt above it (§9.1.1). Check the entire lower-page layout for compression. |
 | Units and mark brackets | Follow the specimen's quantity/unit convention and mark-bracket placement. For calculation answers, keep the unit and bracket beside the answer line as one group. For written answers, align brackets consistently with the specimen. Keep brackets visible and on the intended line. |
-| Fonts, emphasis and text alignment | Verify actual font properties, size, line spacing, bold labels and justification/alignment against the specimen. Apply bold figure/table captions and part labels only as the specimen requires. Do not infer exact sizes from screenshots at unequal scales. |
+| Fonts, emphasis and text alignment | Verify actual font properties, size, line spacing, bold labels and alignment against the specimen. **All question text is justified, as in the specimen.** Apply bold figure/table captions, part labels and instruction keywords only as the specimen requires. Do not infer exact sizes from screenshots at unequal scales. |
 | Figures, captions and tables | Match placement, caption spacing, numbering and text alignment. Ensure figure labels remain clear at final page size and do not collide with surrounding text or answer spaces. |
 | Overall page density | Compare the balance of text, figures and working space directly with the specimen. Avoid compressed pages, particularly below figures, even when every element technically fits. |
-| Page integrity and navigation | Verify margins, headers/footers, numbering, section instructions and sensible page breaks. No clipping, overflow, unexpected blank pages, distorted figures, or separated labels and answer groups. |
+| Page integrity and navigation | Verify margins, headers/footers, numbering, section instructions and sensible page breaks. **Every question starts on a new page.** This is a universal rule for every paper, and it applies even if the specimen places more than one question on a page. Make the break with the paragraph property *page break before* (`w:pageBreakBefore`) on the question's first paragraph, not with a standalone page-break paragraph. The **total page count is even** for double-sided printing. Any blank pages are marked as the specimen marks them (for example, "BLANK PAGE"), the cover states the page count, and there is no "[Turn over" on the last question page or on blank pages. No clipping, overflow, unexpected blank pages, distorted figures, or separated labels and answer groups. |
 | Editable final presentation | Confirm question text and answer areas remain editable in Word. Do not rasterise whole pages to simulate specimen fidelity. |
 
 ### 9.3 Direct visual comparison and evidence
@@ -164,9 +220,30 @@ For **every draft**, the Builder renders the DOCX and inspects all pages before 
 
 Each Critic report must include a formatting checklist with `PASS`, `FAIL` or `NOT VERIFIED`; the draft page/question location; the specimen page or style-sheet reference; observed evidence; and any required correction. Identify and justify genuinely inapplicable checks rather than treating missing evidence as a pass. Include representative paired page images or explicit comparison references. Record actual DOCX measurements where they support a conclusion.
 
+**Cover, header and footer from Draft_01.** Cover layout, header (page number) and footer (school branding, §9.4) are measured and compared with the specimen from **Draft_01 onwards**, not left until late rounds. Builder includes a cover-versus-specimen image and a header crop with Draft_01, and Critic reviews them in Round 1.
+
 **Any failed or unverified mandatory formatting check blocks acceptance, even when the overall score is at least 99/100 and every category score is at least 96/100.** Incorrect indentation, missing numerical dotted lines, misplaced calculation-answer groups, cramped working spaces or insufficient gaps must be corrected and visually rechecked. Significant layout deviations are major defects; a missing or unusable essential answer area that prevents a fair response is critical. Minor observations outside the mandatory gate still affect the evidence-based category score and must be disclosed.
 
 Do not claim pixel-perfect equivalence, complete page inspection or specimen conformity without recorded evidence. If rendering or reliable specimen comparison is unavailable, mark the affected checks `NOT VERIFIED` and report that the quality target has not been verified.
+
+### 9.4 School branding and cover priority
+
+- The project's `SCHOOL_NAME` and `EXAM_TITLE` (§2.1) appear **in the footer of every page** and **on the cover**. On the cover they replace the specimen's issuing-body lines (for example, the MOE / "in collaboration with" / Cambridge / GCE lines and "For examination from …"), in the same positions and sizes. Specimen labels such as "SPECIMEN PAPER" are omitted.
+- Every other cover element (candidate name, centre and index boxes, title, duration, instructions, page-count statement) follows the specimen layout.
+- **Effort priority:** teachers care far less about the cover than the question pages. The cover must be correct and tidy and must pass its check, but spend iteration effort on the question pages: spacing, answer areas, figures and page breaks. Do not run extra rounds over cover differences within the 0.5 pt loose-side tolerance.
+
+### 9.5 Stacked and special notation
+
+Notation that must stack (for example, nuclide notation with the nucleon number over the proton number to the left of the symbol) uses an **Office Math (OMML) object** when it renders correctly in the verification toolchain. If OMML does not render there, use a **borderless, editable Word table**, with cells for the stacked numbers and the symbol aligned as the syllabus convention requires, at body-text size or larger. Never use a raster image, and never use side-by-side superscript and subscript runs where stacking is required.
+
+### 9.6 Document generation hygiene
+
+When the DOCX is generated or edited programmatically:
+
+- write property child elements (`w:pPr`, `w:rPr`, `w:tblPr`, `w:tcPr`, `w:sectPr`, border and margin blocks) in the **OOXML schema order**, with no duplicate children. Apply a reorder step before saving (for example, a reusable `ooxml_order.py`);
+- **validate every XML part** (document, styles, numbering, settings, headers, footers) against the **ECMA-376 schemas** (XSD; transitional unless the specimen is strict), and report the error count with every draft. The final files must validate with 0 errors;
+- **pixel-diff the rendered pages between consecutive drafts** (and between the final file and the accepted draft). A fix should change only the pages it targets, and a purely structural change (such as reordering XML) must be pixel-identical on every page. Record the diff result in the Builder notes;
+- keep page breaks as paragraph properties (§9.2), keep table widths explicit (grid, fixed layout and table width) so all renderers honour them, and never overwrite earlier drafts or their renders.
 
 ## 10. Loop 2 draft process and naming
 
@@ -175,13 +252,13 @@ Do not claim pixel-perfect equivalence, complete page inspection or specimen con
 **Paper Round 1**
 1. Builder creates the complete paper with diagrams **following the approved TOS**; the Builder checks intended answers internally but does not yet write the formal answer scheme.
 2. Save `Draft_01.docx`; preserve TOS alignment notes when needed. The formal answer scheme is not created during the paper Gauntlet.
-3. Critic fully reviews and writes `Draft_01_Review.md` using Section 5's weighted rubric.
+3. Critic fully reviews and writes `Draft_01_Review.md` using Section 5's weighted rubric, including the cover, header and footer checks (§9.3) and the spacing measurement table (§9.1.1).
 
 **Paper Round 2+**
 4. Builder acts on Critic findings and updates the paper and any approved TOS revisions.
 5. Save new, never-overwritten paper files `Draft_02.docx`, `Draft_03.docx`, etc.
 6. Critic re-evaluates **the complete revised package**, recalculates scores and checks regressions and TOS alignment.
-7. Continue until all acceptance conditions are met or **five complete paper rounds** are reached.
+7. Continue until all acceptance conditions are met or **five complete paper rounds** are reached, unless the teacher has explicitly authorised further rounds (§4, Loop 2 step 4).
 
 Do **not** overwrite earlier drafts, alter quality thresholds midstream or change unrelated approved questions gratuitously. If five rounds fail, provide best verified draft and full unresolved-issues report. Do not declare success prematurely. If substantive blueprint changes arise, use Loop 1 reapproval as specified in Section 4.
 
@@ -221,7 +298,9 @@ exam-paper/
     ├── Final_Exam_Paper.docx
     ├── Final_Answer_Scheme.docx
     ├── Final_TOS.docx
-    └── Final_Quality_Report.md
+    ├── Final_Quality_Report.md
+    ├── Final_Exam_Paper_render.pdf  # recommended: render used for verification
+    └── Final_Answer_Scheme_render.pdf  # recommended
 ```
 
 The reference filenames may reflect actual uploads. If persistent folders are not supported, retain names and package results in a ZIP. Keep **all TOS drafts and review reports** and **all paper drafts and review reports**. Every full-paper draft must have a Critic report; TOS changes must be versioned and reapproved where required. There is no answer scheme accompanying each draft.
@@ -246,7 +325,9 @@ https://drive.google.com/drive/folders/1c-0TqPv9qJ_y7bz6A1Tw8lRPEdCjOMf3?usp=dri
 
 Provide three editable Word deliverables: `Final_TOS.docx`, `Final_Exam_Paper.docx` and `Final_Answer_Scheme.docx`; additionally provide `Final_Quality_Report.md`, plus all numbered drafts and Critic reports **from both loops**, including `TOS_Approved.docx` and `TOS_Approval_Report.md` (preferably ZIP). Verify files can be opened and are complete; do not deliver placeholder documents as complete work.
 
-Final quality report must show: TOS approval status and number of TOS review rounds; paper review rounds, score by paper round, six-category breakdown, defects corrected, per-figure evaluation, originality/phrasing evaluation, independently checked question validity and syllabus mappings, mandatory Section 9 formatting checklist and direct specimen comparison evidence, outstanding issues, tool/independence limitations and actual acceptance status.
+Final quality report must show: TOS approval status and number of TOS review rounds; paper review rounds, score by paper round, six-category breakdown, defects corrected, per-figure evaluation, originality/phrasing evaluation, independently checked question validity and syllabus mappings, mandatory Section 9 formatting checklist and direct specimen comparison evidence, teacher-requested deviations (§2.1), any rounds beyond the limit with the teacher's instruction (§4), schema-validation and pixel-diff results for the final files (§9.6), outstanding issues, tool/independence limitations and actual acceptance status.
+
+**Renderer disclosure.** If the drafts were rendered only with LibreOffice or another non-Word renderer, the report must state that **Word pagination is untested** and must list the **tightest page feet**: the pages where the last element comes closest to the bottom limit, each with its spare space in pt. The teacher can then check those pages first when the paper is opened in Word.
 
 Use one final designation:
 - `QUALITY TARGET ACHIEVED — READY FOR TEACHER MODERATION` (only if every gate verified), or
@@ -256,6 +337,6 @@ Never describe the paper as officially approved; a teacher/exam moderator must s
 
 ## 13. Autonomous execution instruction
 
-Read all uploaded references in full. **First run Loop 1 (TOS Builder → Critic → TOS revisions) for up to three rounds; do not write the paper until `TOS_Approved.docx` passes all mandatory checks. Then run Loop 2 (Paper Builder → Critic → numbered paper revisions) for up to five rounds. Once Loop 2 meets the acceptance gate, Builder alone prepares `Final_Answer_Scheme.docx`, without a third loop**, without asking for approval between routine rounds. If a necessary capability is unavailable (e.g. true isolated agents, DOCX rendering, figure editing), disclose the limitation and do not pretend the check occurred. Prioritise the diagram standard, originality, specimen-authentic phrasing, scientific validity and formatting fidelity. Stop each loop at verified acceptance or its own round limit; deliver actual files and honest reports. Always save project outputs to the designated Google Drive project subfolder under Section 11.1 and report verified delivery status.
+Read all uploaded references in full. **First run Loop 1 (TOS Builder → Critic → TOS revisions) for up to three rounds; do not write the paper until `TOS_Approved.docx` passes all mandatory checks. Then run Loop 2 (Paper Builder → Critic → numbered paper revisions) for up to five rounds. Once Loop 2 meets the acceptance gate, Builder alone prepares `Final_Answer_Scheme.docx`, without a third loop**, without asking for approval between routine rounds. If a necessary capability is unavailable (e.g. true isolated agents, DOCX rendering, figure editing), disclose the limitation and do not pretend the check occurred. Prioritise the diagram standard, originality, specimen-authentic phrasing, scientific validity and formatting fidelity. Stop each loop at verified acceptance or its own round limit (or continue beyond the Loop 2 limit only on the teacher's explicit instruction, recorded as in §4); deliver actual files and honest reports. Always save project outputs to the designated Google Drive project subfolder under Section 11.1 and report verified delivery status.
 
 **Success gate: TOS approved at 100% mandatory compliance; paper ≥99/100 overall; ≥96/100 in every category; zero critical defects; all mandatory checks verified; three complete editable DOCX deliverables (TOS, paper, answer scheme); verified saving of all project outputs to the designated Google Drive subfolder.**

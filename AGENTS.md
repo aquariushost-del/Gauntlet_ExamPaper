@@ -27,7 +27,9 @@ Builder AI creates the examination paper based on the approved TOS. Independent 
 
 Each iteration must be saved as a numbered draft, with a corresponding Critic report.
 
-Quality target: At least 98% overall, at least 95% in every category, and zero critical defects.
+The specimen is the gold standard for spacing. Measure it before drafting. No gap may ever be below the specimen value; each gap is at the specimen value or up to 0.5 pt above it (GAUNTLET §9.1). Every question starts on a new page, in every paper, using page-break-before (GAUNTLET §9.2). Question pages take priority over the cover. Record the school name and other project settings at the start (GAUNTLET §2.1).
+
+Quality target: as defined in GAUNTLET_INSTRUCTIONS.md (currently at least 99/100 overall, at least 96/100 in every category, zero critical defects, and every mandatory check verified). If this summary ever differs from GAUNTLET_INSTRUCTIONS.md, the master instructions prevail.
 
 Final Stage — Answer Scheme
 
@@ -47,9 +49,10 @@ Execution Rules
 
 * Use genuinely separate Builder and Critic agents where supported.
 * If separate agents are unavailable, disclose this and use separate review passes.
-* Execute review iterations autonomously within the limits stated in the master instructions.
+* Execute review iterations autonomously within the limits stated in the master instructions. Go beyond the round limit only when the teacher explicitly asks, and record it.
 * Do not fabricate quality scores or claim checks were completed without evidence.
 * Prioritise exceptional diagram quality, creative questions, accurate scientific content and faithful specimen formatting.
 * Do not declare the examination paper ready until the quality criteria are met or clearly report any outstanding limitations.
+* Disclose when Word pagination is untested (non-Word renderer), and list the tightest page feet.
 
 Always follow the latest uploaded version of GAUNTLET_INSTRUCTIONS.md.
