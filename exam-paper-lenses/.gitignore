@@ -1,0 +1,3 @@
+renders/**/pages/
+**/__pycache__/
+scripts/*.bak
