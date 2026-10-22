@@ -61,7 +61,7 @@ Maximum five full-paper rounds reached. Further rounds need **explicit teacher i
 | Critical / major diagram defects | zero unresolved critical | 0 critical | **YES** (diagram) |
 | Mandatory §9 checks | all verified PASS | Brackets FAIL | **NO** |
 
-**Answer scheme:** Not produced (Loop 2 did not meet target). Provide only if teacher explicitly requests a labelled draft scheme.
+**Answer scheme:** `Final_Answer_Scheme.docx` supplied as an explicit **DRAFT** (Loop 2 did not meet target). Not Critic-looped. Use with caution.
 
 ---
 
@@ -92,11 +92,11 @@ Teacher deviations (recorded): grokbot-style topical cover; mixed 10+61 structur
 
 | Deliverable | Status |
 |---|---|
-| `Final_TOS.docx` | Use locked `tos_gauntlet/TOS_Approved.docx` (copy to `final/` when packaging) |
-| `Final_Exam_Paper.docx` | **Not declared final** — best draft is `drafts/Draft_05.docx` |
-| `Final_Answer_Scheme.docx` | **Not created** (target unmet) |
+| `Final_TOS.docx` | Packaged from locked TOS_Approved |
+| `Final_Exam_Paper.docx` | Best verified draft = Draft_05 (not gate-passed) |
+| `Final_Answer_Scheme.docx` | **DRAFT** labelled (target unmet; not Critic-looped) |
 | Critic trail | `critic_reports/Draft_01`…`Draft_05_Review.md` + evidence folders |
-| Google Drive §11.1 | Not completed in this Critic pass — Builder/coordinator to upload |
+| Google Drive §11.1 | Project folder `5086_Physics_Lenses_Topical_2026-10-22` |
 
 ---
 

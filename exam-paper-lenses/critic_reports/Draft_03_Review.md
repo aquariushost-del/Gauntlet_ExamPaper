@@ -3,7 +3,7 @@
 **Role:** Independent Critic AI (not Builder)  
 **Prior:** `Draft_02_Review.md` findings **N1–N5**  
 **Decision:** **REVISE**  
-**Overall:** **91.2 / 100**  
+**Overall:** **92.6 / 100**  
 **Diagram:** **95.8 / 100**  
 **Min figure:** **58** (Q4 — critical wrong ray geometry)  
 **Remaining critical:** **1** (Q4 Fig)  
@@ -45,7 +45,7 @@
 | Scientific accuracy | 15% | **88** | Q4 essential figure scientifically wrong; MCQ characteristics still readable but gate fails |
 | Specimen formatting | 15% | **82** | N2/N3 FAILs dominate; p.4 sparse density |
 | Syllabus / structure | 10% | **97** | Quotas, marks 71, exclusions held |
-| **Overall** | | **91.2** | \(0.35\times95.8 + 0.15\times95 + 0.10\times96 + 0.15\times88 + 0.15\times82 + 0.10\times97 = 91.18\) |
+| **Overall** | | **92.6** | \(0.35\times95.8 + 0.15\times95 + 0.10\times96 + 0.15\times88 + 0.15\times82 + 0.10\times97 = 92.58\) |
 
 **Gates:** overall ≥99? **NO**. Diagram ≥99? **NO**. Others ≥96? **NO** (science 88, formatting 82). Every figure ≥98 & subcriteria ≥96? **NO**. Unresolved critical diagram defects? **YES (Q4)**. Mandatory checks verified? **NO** (N2/N3 FAIL; Word/XSD/print disclosed).
 
