@@ -1,11 +1,13 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.5.0 — P1 MCQ, P2 structured and Physics P5 profiles; essential visual interpretation; stricter diagram acceptance; image generation with verified scientific overlays
-**Updated:** 15 October 2026 (teacher requested P1 and Physics P5 support and stricter specimen-quality diagrams)\
+**Version:** 1.6.0 — adds optional, on-demand inspiration search of the teacher's Cambridge archive (§7.1); all v1.5.0 rules unchanged
+**Updated:** 25 October 2026 (teacher requested a token-efficient inspiration search of the Cambridge Drive archive)\
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** original specimen PDFs for the selected paper: `references/specimen_5086_P1.pdf`, `references/specimen_5086_P2.pdf`, and `references/specimen_5086_P5.pdf` (Physics section only). Each is the gold standard for its own paper type. The P2 Word specimen is secondary for text and structure. The syllabus Markdown remains authoritative for content.
 
 ### Changelog
+
+- **v1.6.0:** Added optional §7.1, inspiration search in the teacher's Cambridge archive. Run it on demand only, as Drive full-text keyword searches scoped to the two folders' year subfolders. Open 3–8 hits per topic, with a hard cap on time and tokens. Never bulk-download, index, OCR or read the archive wholesale. Skip it entirely if the AI cannot search inside those folders. Questions are never copied, content stays inside 5086, diagrams are redrawn under §6, and Critic review is unchanged. Sources may be noted in the build log only. Teacher request.
 
 - **v1.5.0:** Added the supplied original P1 and P5 PDFs and paper-specific requirements (§2.2, §14). P1 Physics scope is questions 1–20; P5 Physics scope is question 1, printed pages 2–7. Added essential visual interpretation quotas and a representation audit, stronger MCQ distractor checks, practical feasibility and data-integrity checks, and specimen comparison notes. Diagram weight increases from 25% to 35%, with creativity 15%, phrasing 10%, science 15%, formatting 15%, syllabus/structure 10%. Overall target remains 99; Diagram quality now requires 99, every individual figure 98 and every figure subcriterion 96. Added failure caps, hard gates and mandatory same-size specimen comparisons. Image generation is an expected route for complex illustrations when it produces closer specimen fidelity; all scientific geometry/readouts remain independently verified. Replaced the universal one-question-per-page rule with paper-specific pagination. Existing P2 answer-space rules and the two-agent/two-loop architecture remain in force for P2.
 
@@ -197,6 +199,35 @@ Distinguish **E: essential extraction**, **C: contextual illustration**, and **N
 **Phrasing:** Match the specimen's formal tone, language economy, command-word usage (`state`, `describe`, `explain`, `calculate`, `determine`, `suggest`, etc.), sentence structure, scaffolding, multipart organisation, numerical symbols/units and references to figures/tables. Match **style**, not exact wording. Avoid ambiguous pronouns, chatter and overlong narratives.
 
 Critic assesses representative phrasing against the specimen and checks for repetition and shallow modifications across **all** questions.
+
+### 7.1 Optional: Inspiration search in the Cambridge archive
+
+The teacher keeps two Google Drive folders of thousands of text-searchable Cambridge (non-5086) physics papers (e.g. 0625, 5054): [Folder 1](https://drive.google.com/drive/folders/1vQAkb8fLgZ7PhFG8axvUo15BidlKCEIA) (`1vQAkb8fLgZ7PhFG8axvUo15BidlKCEIA`) and [Folder 2](https://drive.google.com/drive/folders/1bjXoxLw_sxlpI-lHEObO3wFgmQNfxX-i) (`1bjXoxLw_sxlpI-lHEObO3wFgmQNfxX-i`), both accessible to `imran.skadir@gmail.com` (the Drive account connected to the Builder). Use them **only for inspiration**: fresh real-life contexts, diagram ideas and question angles. This step is **optional and must never block the Gauntlet.**
+
+**Capability check first.** If you cannot run Drive full-text search scoped to these folders (no Drive connector, no `fullText contains` with a parent filter, no access to the account), **skip §7.1 entirely**. Do not work around it by downloading, crawling or listing files. Note "§7.1 skipped: no scoped search" in `Blueprint_Notes.md` and continue.
+
+**Query syntax (tested 25 Oct 2026).** Papers sit in **year subfolders** (2002–2026), and `parentId` matches direct children only, so a search on the top folder returns nothing. Once per project, list the year subfolders (`mimeType = 'application/vnd.google-apps.folder' and (parentId = '<FOLDER_1_ID>' or parentId = '<FOLDER_2_ID>')`), then search 2–4 chosen years:
+`fullText contains 'acceleration' and title contains '_qp_' and (parentId = '<YEAR_FOLDER_ID>' or parentId = '<YEAR_FOLDER_ID>')`
+(`_qp_` keeps question papers and drops mark schemes `_ms_` and examiner reports `_er`.)
+
+**On demand, per topic, small sample:**
+1. Search only when planning a specific topic in Loop 1 (TOS contexts) or drafting it in Loop 2. Never pre-scan the archive.
+2. Run 1–3 keyword queries. Example keyword sets:
+   - Kinematics: `'velocity-time graph'`, `'stopping distance'`, `'terminal velocity'`
+   - Moments/pressure: `'moment' and 'pivot'`, `'hydraulic'`
+   - Thermal: `'specific heat capacity'`, `'thermal conduction'`
+   - Waves/light: `'critical angle'`, `'converging lens'`
+   - Electricity/magnetism: `'potential divider'`, `'electromagnetic induction'`
+3. Open **3–8 hits** in total and skim only the relevant questions, not whole papers.
+4. **Stop** once you have 2–4 usable ideas, or after about 10 minutes / one modest token budget per topic, whichever comes first.
+
+**Never:** bulk-download, export, index, OCR, summarise or read the archive wholesale; page through all results or folder listings; or search topics not currently being set.
+
+**Use rules:**
+- Never copy questions, stems, data sets or diagrams verbatim or near-verbatim. Rewrite in a fresh context with new numbers and structure (§7).
+- Keep everything strictly within the 5086 syllabus (§2). Drop out-of-syllabus content even if the source includes it.
+- Redraw any diagram idea from scratch under §6. Critic review and all gates are unchanged; inspired questions get no allowance.
+- Optionally record in the Builder notes/build log which source paper inspired which question, for originality checks. **Never** put this on the student paper or answer scheme.
 
 ## 8. Scientific accuracy, question validity, syllabus and structure
 
