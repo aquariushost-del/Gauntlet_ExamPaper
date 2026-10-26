@@ -1,11 +1,13 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.6.0 — adds optional, on-demand inspiration search of the teacher's Cambridge archive (§7.1); all v1.5.0 rules unchanged
-**Updated:** 25 October 2026 (teacher requested a token-efficient inspiration search of the Cambridge Drive archive)\
+**Version:** 1.6.1 — §7.1 Cambridge archive inspiration search DISABLED (teacher request); all v1.5.0 rules unchanged
+**Updated:** 27 October 2026 (teacher disabled the Cambridge archive inspiration search because of token cost)\
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** original specimen PDFs for the selected paper: `references/specimen_5086_P1.pdf`, `references/specimen_5086_P2.pdf`, and `references/specimen_5086_P5.pdf` (Physics section only). Each is the gold standard for its own paper type. The P2 Word specimen is secondary for text and structure. The syllabus Markdown remains authoritative for content.
 
 ### Changelog
+
+- **v1.6.1:** §7.1 Cambridge archive inspiration search DISABLED by teacher (token cost). Agents must not search, list or open the archive folders. Section kept for possible re-enable. Teacher request.
 
 - **v1.6.0:** Added optional §7.1, inspiration search in the teacher's Cambridge archive. Run it on demand only, as Drive full-text keyword searches scoped to the two folders' year subfolders. Open 3–8 hits per topic, with a hard cap on time and tokens. Never bulk-download, index, OCR or read the archive wholesale. Skip it entirely if the AI cannot search inside those folders. Questions are never copied, content stays inside 5086, diagrams are redrawn under §6, and Critic review is unchanged. Sources may be noted in the build log only. Teacher request.
 
@@ -200,7 +202,9 @@ Distinguish **E: essential extraction**, **C: contextual illustration**, and **N
 
 Critic assesses representative phrasing against the specimen and checks for repetition and shallow modifications across **all** questions.
 
-### 7.1 Optional: Inspiration search in the Cambridge archive
+### 7.1 Optional: Inspiration search in the Cambridge archive — DISABLED
+
+**STATUS: DISABLED (v1.6.1, teacher request). Do NOT search, list, open or reference the Cambridge archive folders or any 2002–2026 past papers. Skip this section entirely. Only the teacher can re-enable it.**
 
 The teacher keeps two Google Drive folders of thousands of text-searchable Cambridge (non-5086) physics papers (e.g. 0625, 5054): [Folder 1](https://drive.google.com/drive/folders/1vQAkb8fLgZ7PhFG8axvUo15BidlKCEIA) (`1vQAkb8fLgZ7PhFG8axvUo15BidlKCEIA`) and [Folder 2](https://drive.google.com/drive/folders/1bjXoxLw_sxlpI-lHEObO3wFgmQNfxX-i) (`1bjXoxLw_sxlpI-lHEObO3wFgmQNfxX-i`), both accessible to `imran.skadir@gmail.com` (the Drive account connected to the Builder). Use them **only for inspiration**: fresh real-life contexts, diagram ideas and question angles. This step is **optional and must never block the Gauntlet.**
 
