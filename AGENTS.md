@@ -4,7 +4,7 @@ This project creates Physics P1 MCQs, P2 structured papers, Physics P5 practical
 
 ## Authority and references
 
-Read `GAUNTLET_INSTRUCTIONS.md` in full before planning or writing assessment material. Use the current master version; v1.6.2 adds mandatory specimen-calibrated mark demand and answer-line visibility checks. Explicit teacher instructions define scope and structure; `5086_Physics_Key_Syllabus_2026.md` defines syllabus content.
+Read `GAUNTLET_INSTRUCTIONS.md` in full before planning or writing assessment material. Use the current master version; v1.6.3 adds worksheet SIO/question mapping and an editable student worked-answer copy in the question paper. Retain the mandatory specimen-calibrated mark demand and answer-line visibility checks introduced in v1.6.2. Explicit teacher instructions define scope and structure; `5086_Physics_Key_Syllabus_2026.md` defines syllabus content.
 
 Select the matching original specimen PDF, not a conversion or an unrelated paper:
 
@@ -49,3 +49,7 @@ Deliver editable Word `Final_TOS.docx`, `Final_Exam_Paper.docx` and `Final_Answe
 Save each assessment project to its own subfolder of the designated Google Drive parent in master §11.1. This instruction authorises routine folder creation and uploads there. Verify file names and parents; never change sharing without instruction. If delivery fails, provide actual files and say what remains incomplete.
 
 Do not declare readiness without meeting the applicable gates. Disclose unperformed XSD validation, non-Word rendering, untested Word pagination and physical printing/pilots; report the tightest page feet. Preserve the existing evidence and round-limit rules. Diagram quality must be judged against the original specimen, not the Builder's claims.
+
+## Worksheet classroom versions
+
+Apply master §14.5 to worksheets. Add a **Questions** column beside every SIO/SLO, listing the actual assessed questions and parts. After paper acceptance, deliver `Final_Student_Worked_Answers.docx` in addition to the blank worksheet, TOS and detailed teacher scheme. Put student-friendly worked answers directly in the question paper's answer spaces using clear editable handwriting-style text; fill the MCQ grid/indications, show calculation steps and complete drawn answers. Preserve the original questions and the separate blank worksheet. Builder checks all answers against the accepted paper/scheme, renders and inspects every page, verifies font/placement/readability and saves it in the same Drive project. Do not add a third Gauntlet or claim an unperformed review/viewer check.
