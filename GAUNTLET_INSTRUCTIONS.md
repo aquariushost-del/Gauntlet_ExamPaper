@@ -1,11 +1,13 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.6.2 — specimen-calibrated mark demand and robust visible answer lines
-**Updated:** 28 October 2026
+**Version:** 1.6.3 — worksheet objective mapping and student worked-answer Word copies
+**Updated:** 29 October 2026
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** original specimen PDFs for the selected paper: `references/specimen_5086_P1.pdf`, `references/specimen_5086_P2.pdf`, and `references/specimen_5086_P5.pdf` (Physics section only). Each is the gold standard for its own paper type. The P2 Word specimen is secondary for text and structure. The syllabus Markdown remains authoritative for content.
 
 ### Changelog
+
+- **v1.6.3:** Added the teacher's worksheet requirements: an assessed-question column for every SIO/SLO, and an additional editable student worked-answer Word copy with clear handwriting-style answers placed in the question paper itself (§14.5). Retains the two-role/two-loop workflow; both answer versions follow paper acceptance, with Builder render/placement checks and no third Gauntlet.
 
 - **v1.6.2:** Added mandatory part-by-part specimen mark-demand calibration (§8.1–8.2), no duplicate or automatic method credit, TOS reapproval for redistribution, and a release inventory for visible dotted answer lines with an editable fallback when a teacher reports disappearing leaders (§9.7). Existing thresholds and disabled archive search remain unchanged.
 
@@ -25,7 +27,7 @@
 
 Create a **complete, original, syllabus-compliant examination paper** that closely matches the supplied specimen's professional examination style and formatting. Particularly prioritise **exceptional diagrams**, **creative and original questions**, and **authentic specimen-style phrasing**.
 
-Deliver three editable Microsoft Word documents: the approved Table of Specifications (TOS), the final examination paper, and the final answer scheme; also retain a documented review trail and numbered drafts. The answer scheme is created **after** the paper passes Loop 2, not within its Gauntlet.
+Deliver three editable Microsoft Word documents: the approved Table of Specifications (TOS), the final examination paper, and the final answer scheme; also retain a documented review trail and numbered drafts. The answer scheme is created **after** the paper passes Loop 2, not within its Gauntlet. For worksheets, also deliver the student worked-answer Word copy and the SIO/question mapping required by §14.5.
 
 **Acceptance target:** overall weighted quality score **≥ 99/100**, Diagram quality **≥ 99/100**, every other category **≥ 96/100**, every individual figure **≥ 98/100** with every figure subcriterion **≥ 96/100**, **zero unresolved critical or major diagram defects**, and all required checks verified. These rubric scores are internal evidence-based assessments, **not** a scientifically calibrated percentage of quality or a guarantee of perfection. Final teacher moderation remains necessary.
 
@@ -432,6 +434,7 @@ exam-paper/
     ├── Final_Exam_Paper.docx
     ├── Final_Answer_Scheme.docx
     ├── Final_TOS.docx
+    ├── Final_Student_Worked_Answers.docx  # additional requirement for worksheets (§14.5)
     ├── Final_Quality_Report.md
     ├── Final_Exam_Paper_render.pdf  # recommended: render used for verification
     └── Final_Answer_Scheme_render.pdf  # recommended
@@ -519,3 +522,16 @@ At the TOS gate require an appropriate spread of essential diagram/graph/table i
 Make separate P1 and P2 representation totals, formatting checks and reference comparisons. Respect the teacher's requested counts, topic boundary and mark range. Unless specified otherwise, include Measurement when it falls within the requested syllabus range; do not carry exclusions from an earlier paper into a new request. Diagram quality and essential interpretation are separate checks: both must pass. After a figure/readout/option change, re-solve the question, update its TOS row and final scheme, recheck uniqueness and render the affected page.
 
 Keep the exact two-agent/two-loop workflow and existing review-round limits. Stricter diagrams are not permission to fabricate scores or silently extend rounds. Stop at the existing limit and report unmet gates honestly when necessary. Do not automatically label an earlier paper compliant with this version; it must be reviewed against the new requirements.
+
+### 14.5 Worksheet objectives and student worked-answer copy
+
+These requirements apply to **worksheets and chapter revision worksheets**, rather than examination or test papers unless the teacher asks for them there.
+
+- On the worksheet's SIO/SLO page, include a **Questions** column alongside every Specific Instructional Objective or learning outcome. List the actual assessed question numbers and relevant parts, for example `11(b–c)`, checked against the finished question wording. A part can address more than one objective; this does not double-count marks. Distinguish direct assessment from knowledge that is only prerequisite. Preserve the established cover/page-2 objectives/questions-from-page-3 arrangement when that is the teacher's worksheet format.
+- In addition to the blank worksheet, approved TOS and detailed teacher answer scheme, deliver **`Final_Student_Worked_Answers.docx`**: a student answer version made from the actual question paper, with the worked answers **inside the corresponding question paper answer spaces**. A separate answer-only document does not satisfy this requirement.
+- Use clear, student-friendly handwriting-style lettering for the inserted answers, preferably readable dark-blue ink that is distinct from the original printed questions. Keep answer text editable in Word; do not rasterise full pages or substitute screenshots of handwriting. Use a suitable licensed handwriting font, embed it where licensing and the toolchain permit, and state any untested viewer/font behaviour.
+- Retain all original question wording, data, figures, numbering, marks and the SIO question map. Fill the MCQ answer grid and clearly indicate the chosen options. Show useful working for numerical MCQs and structured calculations, including formula, substitution, unit conversion where needed, and the final answer with units. Use concise student-facing explanations rather than teacher rubric codes, marking notes or an unworked answer key.
+- Complete required drawn answers, circuit connections, graph plots and labels on the corresponding question figures. Maintain precise scientific geometry, legibility and the diagram standard. Retain the blank student worksheet as a separate unchanged deliverable.
+- Keep inserted answers beside their actual question/part and preserve the blank worksheet's page correspondence where practical. Never force answers into inadequate spaces by shrinking them to unreadable size, clipping, overlapping text or obscuring question data; allow an orderly continuation or additional space when necessary, and disclose any changed pagination.
+- Builder creates both the teacher scheme and student worked-answer copy **after Loop 2 acceptance**, checking every answer against the accepted paper and detailed scheme. Render and inspect every page of the filled copy, including every calculation, MCQ indication/grid and completed figure. Verify scientific consistency, editable text, handwriting-font appearance, placement and readable print size. Save the DOCX, source assets and actual verification evidence in the same Google Drive project folder; a PDF companion is recommended.
+- This remains the same **two roles and two loops**. There is **no third answer-scheme/student-copy Gauntlet**. The Builder's post-acceptance checks are required, but do not claim that the accepted blank worksheet's numerical quality score automatically certifies newly inserted answers or an untested Word/viewer render. If Loop 2 has not passed, these answer versions require an explicit teacher request and must be labelled draft.
