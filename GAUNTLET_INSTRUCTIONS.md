@@ -1,11 +1,13 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.6.1 — §7.1 Cambridge archive inspiration search DISABLED (teacher request); all v1.5.0 rules unchanged
-**Updated:** 27 October 2026 (teacher disabled the Cambridge archive inspiration search because of token cost)\
+**Version:** 1.6.2 — specimen-calibrated mark demand and robust visible answer lines
+**Updated:** 28 October 2026
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** original specimen PDFs for the selected paper: `references/specimen_5086_P1.pdf`, `references/specimen_5086_P2.pdf`, and `references/specimen_5086_P5.pdf` (Physics section only). Each is the gold standard for its own paper type. The P2 Word specimen is secondary for text and structure. The syllabus Markdown remains authoritative for content.
 
 ### Changelog
+
+- **v1.6.2:** Added mandatory part-by-part specimen mark-demand calibration (§8.1–8.2), no duplicate or automatic method credit, TOS reapproval for redistribution, and a release inventory for visible dotted answer lines with an editable fallback when a teacher reports disappearing leaders (§9.7). Existing thresholds and disabled archive search remain unchanged.
 
 - **v1.6.1:** §7.1 Cambridge archive inspiration search DISABLED by teacher (token cost). Agents must not search, list or open the archive folders. Section kept for possible re-enable. Teacher request.
 
@@ -241,6 +243,23 @@ The teacher keeps two Google Drive folders of thousands of text-searchable Cambr
 - Check section totals, choice rules, question numbering, time suitability, paper total and full TOS consistency.
 - Never assume a creative context justifies out-of-syllabus science.
 
+### 8.1 Specimen-calibrated mark demand — mandatory gate
+
+Marks must reflect the distinct physics, reasoning and processing demanded by the candidate's task, calibrated against comparable parts in the supplied specimen. Do not award generous marks merely to reach a requested question total.
+
+- Before TOS approval, record a mark-demand ledger for every structured part: proposed marks, distinct assessable achievements, information already supplied or obtained in preceding parts, and the closest specimen question/part and printed page. Explain differences in demand. An unmatched task needs a reasoned comparison with the closest task class; do not invent an official allocation.
+- A direct reading, statement, single addition/subtraction, or direct substitution often merits one mark where the specimen treats a comparable task that way. Do not automatically split every calculation into a method mark plus an answer mark. Equally, do not impose a universal one-mark rule: unfamiliar selection, unit conversion, algebra, linked stages, or substantive reasoning may justify more when supported by specimen demand.
+- Account for scaffolding. Do not award a fresh method mark merely for reusing the same relationship or intermediate result already supplied, credited, or necessarily established in a preceding part, without additional application. Error carried forward permits credit for new valid work; it does not create extra marks for the same achievement.
+- Each explanation mark requires a distinct, necessary point that the question actually requests. Do not give separate marks for synonymous statements, a conclusion repeated as its own reason, or restating given data. For drawings, judge symbols, functional connections and relevant scientific features in proportion to specimen drawing tasks; do not award one mark per obvious component by default.
+- Distinguish correct-answer credit from discretionary presentation. Do not add standalone marks for neatness, copying a formula, routine units, choosing a named item immediately from its already-credited numerical value, or showing working unless the task and specimen convention substantiate that mark.
+- If honest marking leaves a question or section below the requested total, add a worthwhile, syllabus-aligned task or revise the question to require genuinely additional reasoning. Reapprove the revised TOS before changing the paper. Never inflate a trivial step or silently change the specified total.
+- Critic independently solves every part using the shortest valid route, checks alternative routes and dependencies, and records PASS/FAIL/NOT VERIFIED for every allocation, citing the actual specimen. A source question paper supports comparison of displayed mark demand; unless an official marking scheme is supplied, inferred mark points are school judgements, not official Cambridge mark-scheme claims.
+- Any unsupported allocation, duplicate credit or missing calibration evidence blocks acceptance. Material unfairness is critical; lesser systematic generosity is major and must be corrected. Preserve an old-to-new allocation table, verified totals and the TOS revision. Carry the approved allocations into the final answer scheme and cross-check every paper/scheme/TOS part.
+
+### 8.2 Minimum calibration anchors for 5086 Physics
+
+Read the actual supplied specimen; these anchors do not replace it. In the current 5086 P2 specimen, printed page 9, Q6(b) asks for the current through a resistor [1], Q6(c) asks for a resistor's potential difference [1], Q6(d) asks for a branch current requiring additional circuit inference [2], and Q6(a) asks for a series/parallel equivalent resistance [3]. Compare the whole task, including what is already given, rather than matching a command word alone. These examples must be refreshed if the reference changes.
+
 ## 9. Specimen formatting fidelity — mandatory gate (15%)
 
 A readable paper is not sufficient evidence of specimen fidelity. The Builder must reproduce the specimen's layout conventions, and the Critic must verify them directly. **Formatting retains its 15% weight and must score at least 96/100. Every mandatory formatting check must also pass independently of the numeric score.**
@@ -348,6 +367,16 @@ When the DOCX is generated or edited programmatically:
 - **validate every XML part** (document, styles, numbering, settings, headers, footers) against the **ECMA-376 schemas** (XSD; transitional unless the specimen is strict), and report the error count with every draft. The final files must validate with 0 errors;
 - **pixel-diff the rendered pages between consecutive drafts** (and between the final file and the accepted draft). A fix should change only the pages it targets, and a purely structural change (such as reordering XML) must be pixel-identical on every page. Record the diff result in the Builder notes;
 - keep page breaks as paragraph properties (§9.2), keep table widths explicit (grid, fixed layout and table width) so all renderers honour them, and never overwrite earlier drafts or their renders.
+
+### 9.7 Answer-line visibility and viewer compatibility — mandatory release check
+
+The intended final display must show an actual dotted writing line in every required answer area, for example `current = ........................................ A [1]`. A tab character or `w:leader="dot"` in the XML is not evidence that dots will appear in the teacher's viewer.
+
+Builder and Critic must each inventory every numerical and written response area and check its rendered visibility, length, alignment and unit/bracket placement. Include labelled groups such as X and Y. Record the question/part, page and evidence for every line; do not approve from one sample.
+
+When a teacher reports disappearing tab leaders, treat that report as a compatibility defect even if the local renderer displays them. Replace the affected leaders with robust editable dotted text or another editable approach whose final appearance has been checked; preserve the measured answer-group geometry. Do not substitute blank space or underscores, and do not rasterise whole pages. Verify actual visible dot glyphs and line spans, not text extraction alone.
+
+State which renderer/viewer was actually tested. A successful LibreOffice render cannot establish Word or Google Docs compatibility. If that viewer is unavailable, disclose the remaining viewer check and do not repeat an unsupported universal compatibility claim.
 
 ## 10. Loop 2 draft process and naming
 
