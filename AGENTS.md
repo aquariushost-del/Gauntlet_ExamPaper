@@ -4,7 +4,7 @@ This project creates Physics P1 MCQs, P2 structured papers, Physics P5 practical
 
 ## Authority and references
 
-Read `GAUNTLET_INSTRUCTIONS.md` in full before planning or writing assessment material. Version 1.5.0 is the authoritative workflow. Explicit teacher instructions define scope and structure; `5086_Physics_Key_Syllabus_2026.md` defines syllabus content.
+Read `GAUNTLET_INSTRUCTIONS.md` in full before planning or writing assessment material. Use the current master version; v1.6.2 adds mandatory specimen-calibrated mark demand and answer-line visibility checks. Explicit teacher instructions define scope and structure; `5086_Physics_Key_Syllabus_2026.md` defines syllabus content.
 
 Select the matching original specimen PDF, not a conversion or an unrelated paper:
 
@@ -37,6 +37,10 @@ Diagram quality has **35% weight**. Require **at least 99/100 for the diagram ca
 For every figure, including every MCQ diagram option, require a relevant specimen crop beside the produced figure at comparable physical size. Inspect the final-size greyscale page and readable figure crop, not only a contact sheet or source file. Recognisability alone is insufficient. Rougher-than-specimen illustrations are capped at 95; crude placeholders or distorted apparatus are major defects capped at 89; unresolved visible cosmetic defects cap a figure at 97. Wrong scientific geometry/readouts are critical and block release.
 
 Use image generation when it can make complex objects, people or apparatus closer to specimen-quality technical illustration. Do not approve a crude deterministic sketch merely because it is easy to draw. Inspect and correct generated artwork, and add precise scales, digits, circuit connections, graph geometry, dimensions, arrows and labels as verified overlays wherever practical. Retain source assets. Image generation does not establish scientific correctness; equally, a high-resolution vector is not automatically a professional drawing. Simple scientific schematics remain appropriate when that is the representation in the matching specimen.
+
+## Mark demand and visible answer lines
+
+Apply master §§8.1–8.2 and §9.7 as mandatory gates. Record every structured part's distinct credit points, shortest valid solution, already-credited dependencies and actual specimen comparator. Do not give an automatic method-plus-answer pair for a single arithmetic or substitution step, and never inflate marks to reach a total. Reapprove a changed TOS before revising questions. If tab leaders disappear in the teacher's viewer, use robust editable dots, inspect every response area and disclose untested viewers.
 
 ## Output and honesty
 
