@@ -4,7 +4,7 @@ This project creates Physics P1 MCQs, P2 structured papers, Physics P5 practical
 
 ## Authority and references
 
-Read `GAUNTLET_INSTRUCTIONS.md` in full before planning or writing assessment material. Use the current master version; v1.6.3 adds worksheet SIO/question mapping and an editable student worked-answer copy in the question paper. Retain the mandatory specimen-calibrated mark demand and answer-line visibility checks introduced in v1.6.2. Explicit teacher instructions define scope and structure; `5086_Physics_Key_Syllabus_2026.md` defines syllabus content.
+Read `GAUNTLET_INSTRUCTIONS.md` in full before planning or writing assessment material. Use the current master version; v1.7.0 adds the student notes deliverable (§15). v1.6.3 added worksheet SIO/question mapping and an editable student worked-answer copy in the question paper. Retain the mandatory specimen-calibrated mark demand and answer-line visibility checks introduced in v1.6.2. Explicit teacher instructions define scope and structure; `5086_Physics_Key_Syllabus_2026.md` defines syllabus content.
 
 Select the matching original specimen PDF, not a conversion or an unrelated paper:
 
@@ -53,3 +53,7 @@ Do not declare readiness without meeting the applicable gates. Disclose unperfor
 ## Worksheet classroom versions
 
 Apply master §14.5 to worksheets. Add a **Questions** column beside every SIO/SLO, listing the actual assessed questions and parts. After paper acceptance, deliver `Final_Student_Worked_Answers.docx` in addition to the blank worksheet, TOS and detailed teacher scheme. Put student-friendly worked answers directly in the question paper's answer spaces using clear editable handwriting-style text; fill the MCQ grid/indications, show calculation steps and complete drawn answers. Preserve the original questions and the separate blank worksheet. Builder checks all answers against the accepted paper/scheme, renders and inspects every page, verifies font/placement/readability and saves it in the same Drive project. Do not add a third Gauntlet or claim an unperformed review/viewer check.
+
+## Student notes
+
+When the teacher asks for student notes on any physics or science topic, follow master §15. Deliver a colourful, student-friendly DOCX plus PDF with an SIO box in every section, worked examples and high-quality diagrams. Cover: St Anthony's Canossian Secondary School; use the syllabus code, SIOs and syllabus source document for the subject/topic the teacher gives (e.g. K326 Physics); say "SEC exam"; no stats block; modest decoration. No internal labels such as "verbatim" and no duplicate syllabus-outcome lines. Make everything greyscale-safe (labels, not colour alone). Keep headings with next; no blank gap over ~130 pt except the cover. Labels ≥ 9 pt, rasters ≥ 600 ppi; diagrams scientifically accurate, using standard conventions, with natural anatomy (e.g. field lines never cross; Fleming's left hand with mutually perpendicular fingers); trace any supplied photo. Render every page to PNG and inspect every figure. Builder Draft_NN → Critic (target 99); teacher may accept directly. Keep only FINAL docx/pdf in the project folder; move everything else into `Older drafts` in the Drive Archive folder (move, never trash). Never email teachers directly.

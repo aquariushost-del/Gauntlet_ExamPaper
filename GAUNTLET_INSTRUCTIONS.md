@@ -1,11 +1,13 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.6.3 — worksheet objective mapping and student worked-answer Word copies
-**Updated:** 29 October 2026
+**Version:** 1.7.0 — student notes deliverable
+**Updated:** 31 October 2026
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** original specimen PDFs for the selected paper: `references/specimen_5086_P1.pdf`, `references/specimen_5086_P2.pdf`, and `references/specimen_5086_P5.pdf` (Physics section only). Each is the gold standard for its own paper type. The P2 Word specimen is secondary for text and structure. The syllabus Markdown remains authoritative for content.
 
 ### Changelog
+
+- **v1.7.0:** Added §15, the student notes deliverable: a colourful, student-friendly DOCX plus PDF with SIO boxes, worked examples and high-quality diagrams; school cover citing the teacher-specified syllabus code and SIOs (e.g. K326 Physics) with SEC exam wording; topic-agnostic; greyscale-safe printing; keep-with-next and blank-gap layout checks; diagram label size, resolution, scientific-accuracy, standard-convention and anatomy checks with full-page PNG inspection; Builder draft / Critic review (target 99) with teacher direct acceptance; FINAL-only project folder with older files moved to an `Older drafts` subfolder in the Drive Archive folder; no direct email to teachers. Teacher request.
 
 - **v1.6.3:** Added the teacher's worksheet requirements: an assessed-question column for every SIO/SLO, and an additional editable student worked-answer Word copy with clear handwriting-style answers placed in the question paper itself (§14.5). Retains the two-role/two-loop workflow; both answer versions follow paper acceptance, with Builder render/placement checks and no third Gauntlet.
 
@@ -535,3 +537,65 @@ These requirements apply to **worksheets and chapter revision worksheets**, rath
 - Keep inserted answers beside their actual question/part and preserve the blank worksheet's page correspondence where practical. Never force answers into inadequate spaces by shrinking them to unreadable size, clipping, overlapping text or obscuring question data; allow an orderly continuation or additional space when necessary, and disclose any changed pagination.
 - Builder creates both the teacher scheme and student worked-answer copy **after Loop 2 acceptance**, checking every answer against the accepted paper and detailed scheme. Render and inspect every page of the filled copy, including every calculation, MCQ indication/grid and completed figure. Verify scientific consistency, editable text, handwriting-font appearance, placement and readable print size. Save the DOCX, source assets and actual verification evidence in the same Google Drive project folder; a PDF companion is recommended.
 - This remains the same **two roles and two loops**. There is **no third answer-scheme/student-copy Gauntlet**. The Builder's post-acceptance checks are required, but do not claim that the accepted blank worksheet's numerical quality score automatically certifies newly inserted answers or an untested Word/viewer render. If Loop 2 has not passed, these answer versions require an explicit teacher request and must be labelled draft.
+
+## 15. Student notes
+
+These requirements apply when the teacher asks for **student notes** (chapter or topic notes) on **any physics or science topic**. All topic-specific details below are illustrative examples only. They stand beside the paper profiles in §14 and reuse the same two roles. Where this section conflicts with paper-specific rules (e.g. specimen layout, answer lines, mark demand), this section governs notes.
+
+### 15.1 Deliverable
+
+- Deliver a high-quality, beautifully designed, colourful **Word (.docx)** file **and** a matching **PDF**. The notes must look appealing to students, not like an internal document.
+- Include high-quality diagrams, clear worked examples and the chapter's **SIOs** (Specific Instructional Objectives).
+- Give **every section its own SIO box** listing the SIOs that section covers.
+- Do **not** add separate "Syllabus outcomes covered" lines or lists that duplicate the SIO boxes.
+
+### 15.2 Cover, syllabus and exam naming
+
+- Cover title must read **St Anthony's Canossian Secondary School**.
+- Use the **syllabus code and SIOs for the subject and topic the teacher gives** (e.g. K326 Physics). Take content and SIOs from the relevant syllabus source document for that subject (e.g. `5086_Physics_Key_Syllabus_2026.md` for K326 Physics, which keeps the 5086 SIOs). If the teacher names a subject with no source document in the repo, ask for it or state the gap; never invent SIOs.
+- Cite the current syllabus code on the cover, not a superseded code (e.g. K326, not 5086).
+- Refer to the examination as the **"SEC exam"** in student-facing text, not by an old paper code.
+- No statistics block on the cover (e.g. counts such as `6 / 18 / 18` for sections, SIOs, examples).
+- Keep cover decoration modest and topic-appropriate; motifs (e.g. field lines, molecules, waves) must not be overly long or dominate the page.
+
+### 15.3 Student-friendly wording
+
+- Write for students. Remove teacher or internal labels such as `(K326, verbatim)`, `verbatim`, rubric codes, build notes or Critic tags.
+- SIOs may be quoted faithfully, but without any label announcing that they are verbatim.
+
+### 15.4 Black-and-white printing (greyscale safety)
+
+Notes are printed in black and white. Colour is for screen appeal only; meaning must survive greyscale.
+
+- Avoid pale reds, pale oranges and other light tints that vanish or look identical in greyscale; check contrast in a greyscale render.
+- Never rely on colour alone. Distinguish items with labels, line styles, patterns or shading too.
+- Any colour-coded distinction must also carry a **label** (e.g. N / S magnetic poles, + / − terminals or charges, acid/alkali, keys and legends).
+
+### 15.5 Layout
+
+- Never leave a heading, or a heading plus a short opening paragraph, stranded at the bottom of a page. Use Word's **keep with next** (and keep lines together where needed) on headings and lead-in lines.
+- Check every page for large blank gaps: no more than about **130 pt** of unintended empty space on any page except the cover. Fix by reflowing, resizing figures or moving content, not by shrinking text below readable size.
+
+### 15.6 Diagrams
+
+- All diagram labels at least **9 pt at the printed size**.
+- Raster images at least **600 ppi** at placed size; prefer vectors for schematics.
+- **Scientifically accurate:** every diagram must be correct for its topic: geometry, directions, arrows, scales, symbols and relationships (e.g. magnetic field lines start and end on the poles and never cross or touch; ray diagrams obey the laws of reflection/refraction; circuit symbols and connections are valid).
+- **Standard conventions:** use the syllabus/SEC-standard symbols, notation, units and drawing conventions for the subject (e.g. circuit symbols, conventional current direction, labelled axes with units).
+- **Natural anatomy:** hands, people and animals must be anatomically natural (e.g. five digits, natural joints and proportions). Rule-of-thumb hand poses must match the standard convention (e.g. Fleming's left-hand rule: first finger, second finger and thumb mutually perpendicular, second finger stretched toward the viewer, labelled Field / Current / Motion).
+- If the teacher supplies a photo (e.g. of a hand pose or apparatus), **trace from it** rather than inventing it.
+- Apply the spirit of §6: image generation may be used for complex objects, but generated art must be inspected and corrected, and labels/arrows added as verified overlays.
+- **Render every page to PNG and visually inspect every figure** (at print size and in greyscale) before delivery. Never claim this check without doing it.
+
+### 15.7 Process and naming
+
+- **Builder** drafts the notes as `Draft_01`, `Draft_02`, … and **Independent Critic** reviews each draft against §15 with a **target score of 99/100**, recording evidence (page renders, figure crops) per §10. Never invent reviews or scores.
+- The **teacher can accept a draft directly**; teacher acceptance ends the loop even if the Critic target is not yet met (record this honestly).
+- At release, keep **only the FINAL docx and pdf** in the project folder, renamed with `FINAL` (e.g. `<Topic>_Notes_FINAL.docx`, `<Topic>_Notes_FINAL.pdf`).
+- Move older drafts, change logs and Critic reports into a subfolder named **`Older drafts`**, and place that subfolder in the user's Google Drive **Archive** folder.
+- Files are shared, so they **cannot be trashed**: **move** them, never delete or trash them. Do not change sharing.
+- Save the project in Google Drive as in §11.1 (routine folder creation and uploads authorised), verifying names and parents before reporting success.
+
+### 15.8 Communication
+
+- **Never email teachers directly.** Deliver to the requesting teacher in chat/Drive only.
