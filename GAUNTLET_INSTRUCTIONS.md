@@ -1,11 +1,13 @@
 # Exam Paper Gauntlet — Master Instructions
 
-**Version:** 1.7.0 — student notes deliverable
+**Version:** 1.7.1 — student notes pastel house colour style
 **Updated:** 31 October 2026
 **Workflow:** Builder AI ↔ Independent Critic AI  
 **Reference files:** original specimen PDFs for the selected paper: `references/specimen_5086_P1.pdf`, `references/specimen_5086_P2.pdf`, and `references/specimen_5086_P5.pdf` (Physics section only). Each is the gold standard for its own paper type. The P2 Word specimen is secondary for text and structure. The syllabus Markdown remains authoritative for content.
 
 ### Changelog
+
+- **v1.7.1:** Added the house colour style for student notes (§15.4a): all shaded elements (section banners, heading bars, SIO boxes, worked-example and table headers, callouts, cover art) use soft pastel fills with dark navy text (e.g. #14213D), never white text on dark fills; greyscale-safe. Clarified §15.4 so pale tints are allowed only as backgrounds behind dark text. Teacher request.
 
 - **v1.7.0:** Added §15, the student notes deliverable: a colourful, student-friendly DOCX plus PDF with SIO boxes, worked examples and high-quality diagrams; school cover citing the teacher-specified syllabus code and SIOs (e.g. K326 Physics) with SEC exam wording; topic-agnostic; greyscale-safe printing; keep-with-next and blank-gap layout checks; diagram label size, resolution, scientific-accuracy, standard-convention and anatomy checks with full-page PNG inspection; Builder draft / Critic review (target 99) with teacher direct acceptance; FINAL-only project folder with older files moved to an `Older drafts` subfolder in the Drive Archive folder; no direct email to teachers. Teacher request.
 
@@ -567,9 +569,17 @@ These requirements apply when the teacher asks for **student notes** (chapter or
 
 Notes are printed in black and white. Colour is for screen appeal only; meaning must survive greyscale.
 
-- Avoid pale reds, pale oranges and other light tints that vanish or look identical in greyscale; check contrast in a greyscale render.
+- Do not use pale reds, pale oranges or other light tints for lines, text, symbols or colour-coded distinctions; they vanish or look identical in greyscale. Pale tints are allowed only as **background fills behind dark text** (see §15.4a). Check contrast in a greyscale render.
 - Never rely on colour alone. Distinguish items with labels, line styles, patterns or shading too.
 - Any colour-coded distinction must also carry a **label** (e.g. N / S magnetic poles, + / − terminals or charges, acid/alkali, keys and legends).
+
+### 15.4a House colour style (pastel)
+
+- Every shaded element (section banners and number blocks, heading bars, SIO boxes, worked-example headers, table header rows and coloured cells, callouts such as Key idea / Common mistake, cover panels and cover art, and mind-map centre boxes) uses a **soft pastel fill** (a light tint of the section colour).
+- Text on any shaded element is **dark**: dark navy (e.g. **#14213D**) or near-black. **Never use white text on dark fills.**
+- Accent colours may remain for thin rules, borders, icons and coloured key words, provided they stay dark enough to read in greyscale.
+- Cover art and figure backgrounds follow the same rule: pastel background, dark lines and labels.
+- Greyscale-safe: render a greyscale version of every page and confirm that all shaded text has strong contrast and every pastel fill is still visible as a light grey.
 
 ### 15.5 Layout
 
